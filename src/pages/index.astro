@@ -3,6 +3,7 @@ import { SEO } from "astro-seo"
 import { seoConfig } from "@util/seoConfig"
 import "@fontsource/inter/";
 import Projects from "@component/projects.astro";
+import Splash from "@component/splash.astro";
 import Header from "@component/header.astro";
 import AboutMe from "@component/aboutme.astro";
 import Tutoring from "@component/tutoring.astro";
@@ -107,7 +108,7 @@ const icons = [
     class="h-full font-varela overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <!-- <Splash /> -->
+    <Splash />
     <AboutMe />
     <Projects />
     <Tutoring />
