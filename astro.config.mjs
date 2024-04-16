@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import { VitePWA } from "vite-plugin-pwa";
 import { manifest, seoConfig } from "./utils/seoConfig";
 import playformCompress from "@playform/compress";
+
 import icon from "astro-icon";
 
 // https://astro.build/config
