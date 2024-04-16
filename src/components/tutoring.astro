@@ -1,0 +1,76 @@
+---
+interface IQuote {
+  body: string;
+  author: string;
+}
+
+const quotes = [
+  {
+    body: 'Danny is a fantastic tutor, and I enjoy our sessions greatly. He has gone above and beyond to help me gain essential knowledge. I was delighted when he took time outside of our lesson, to look at some code and discuss it and the implications of it. ',
+    author: 'Andy',
+  },
+  {
+    body: 'Danny is an excellent tutor. He is warm and friendly, and knows so much in his area. He\'s been very helpful in my coding journey especially with navigating the wealth of information online. I would recommend him to anyone.',
+    author: 'Lois',
+  },
+  {
+    body: 'Danny is a great and patient tutor. I wanted someone who would be able to explore key problem areas (nodeJS/APIs) to dig down, explain from a different perspective and show me how to research and debug issues. 10/10 for patience, approach, preparedness, communication and clarity.',
+    author: 'Paul',
+  },
+  {
+    body: 'Danny\'s vast experience and knowledge shows. He is exceptional at breaking down complex concepts that I had been struggling with, is very patient and easy to speak with. After just a handful of sessions, I have a significantly better grasp of React, a renewed confidence that a change in career is possible.',
+    author: 'Elizabeth',
+  },
+  {
+    body: 'I was mentored by Danny when I first began my career as a web developer. His patience and empathy combined with his brilliant understanding of the web, made him a great teacher and mentor, and fast tracked my growth as a web developer many times over.',
+    author: 'Carlos',
+  },
+]
+
+const shuffle = (array: IQuote[]): IQuote[] => {
+  const a = array.sort(() => Math.random() - 0.5); 
+  return a.slice(0, 4);
+};
+
+const shuffledQuotes = shuffle(quotes);
+---
+
+<section
+  id="tutoring"
+  class="flex pt-24 flex-col text-xl items-center"
+>
+  <div class="flex flex-col items-center gap-4">
+    <h2
+      class="gradient-text text-center text-2xl mb-4"
+    >
+      Tutoring
+    </h2>
+  </div>
+  <p class="w-10/12 mb-8">
+    I have always enjoyed mentoring junior developers, and for the last few years have tutored students via <a class="text-pink-500" href="https://www.superprof.co.uk" target="_blank" rel="noopener noreferrer">Superprof</a>. I teach web development skills, particularly JavaScript and React, via webcam from my home office.
+  </p>
+
+  <h2
+    class="text-center text-xl mb-0 text-gray-500"
+  >
+    Selected reviews
+  </h2>
+
+  <div class="w-10/12 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
+    {shuffledQuotes.map((quote, i) => (
+      <div class="w-full rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800">
+        <div class="w-full mb-8">
+            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+            <p class="text-base text-gray-600 text-center px-5">{quote.body}</p>
+            <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+        </div>
+        <div class="w-full">
+            <p class="text-md text-indigo-500 font-bold text-center">{quote.author}</p>
+        </div>
+    </div>
+  ))}
+  </div>
+
+
+
+</section>

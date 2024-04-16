@@ -1,0 +1,346 @@
+---
+interface IProject {
+  title: string;
+  description: string;
+  link: string;
+  image: {
+    imageClasses: string;
+  };
+  tags: ITag[];
+};
+
+interface ITag {
+  name: string;
+  klasses: string;
+}
+
+const colors = {
+  'front-end': 'text-white bg-[#98473E]',
+  'ui/ux': 'text-black bg-[#FA7921]',
+  'react': 'text-white bg-[#2c9eca]',
+  'typescript': 'text-gray-100 bg-[#2f75c0]',
+  'graphql': 'text-gray-100 bg-[#566E3D]',
+  'mui': 'text-gray-200 bg-[#377fff]',
+  'rwd': 'text-gray-700 bg-[#CEB1BE]',
+  'javascript': 'text-gray-900 bg-yellow-300',
+
+  'author': 'text-gray-100 bg-black',
+  'python': 'text-[#f7c93e] bg-[#366a9a]',
+  'juce': 'text-[#0000ff] bg-[#ec4037]',
+  'full-stack': 'text-[#1A2E05] bg-[#ECFCCB]',
+  'react-native': 'text-[#2E1065] bg-[#EDE9FE]',
+  'c++': 'text-[#155E75] bg-[#A5F3FC]',
+  'astro': 'text-[#FDE68A] bg-[#713F12]',
+  'developer': 'text-[#FBCFE8] bg-[#701A75]',
+  'tailwind': 'text-[#E4E4E7] bg-[#171717]',
+  'firebase': 'text-[#9A3412] bg-[#FED7AA]',
+  'spa': 'text-[#7F1D1D] bg-[#FEE2E2]',
+  'tensorflow': 'text-[#030712] bg-[#A1A1AA]',
+};
+
+const projects = [
+  {
+    title: 'Tillr',
+    description: 'Governance and compliance web application used by clients ranging from local councils to football clubs.',
+    link: 'https://tillr.io',
+    image: {
+      imageClasses: `bg-[url('/images/projects/t3.png')]`,
+    },
+    tags: [
+      {
+        name: 'Front-end',
+        klasses: colors['front-end'],
+      },
+      {
+        name: 'UI/UX Design',
+        klasses: colors['ui/ux'],
+      },
+      {
+        name: 'React',
+        klasses: colors['react'],
+      },
+      {
+        name: 'TypeScript',
+        klasses: colors['typescript'],
+      },
+      {
+        name: 'GraphQL',
+        klasses: colors['graphql'],
+      },
+      {
+        name: 'MUI',
+        klasses: colors['mui'],
+      },
+      {
+        name: 'RWD',
+        klasses: colors['rwd'],
+      },
+      {
+        name: 'JavaScript',
+        klasses: colors['javascript'],
+      },
+    ]
+  },
+  // {
+  //   title: 'allotr',
+  //   description: 'allotr is free task list application that allows infinite collaborators.',
+  //   link: 'https://allotr.app',
+  //   image: {
+  //     imageClasses: `bg-[url('/images/projects/allotr.png')]`,
+  //   },
+  //   tags: [
+  //     {
+  //       name: 'Full Stack',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'UI/UX Design',
+  //       klasses: colors['ui/ux'],
+  //     },
+  //     {
+  //       name: 'SPA',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'Next.js',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'tRPC',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'Tailwind',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'TypeScript',
+  //       klasses: colors['typescript'],
+  //     },
+  //     {
+  //       name: 'Prisma',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //     {
+  //       name: 'NextAuth',
+  //       klasses: 'text-gray-700 bg-gray-200',
+  //     },
+  //   ]
+  // },
+  {
+    title: 'Danny Callaghan',
+    description: `NFT trading platform for users alergic to mushrooms. Only kidding, it's this site.`,
+    link: 'https://dannycallaghan.dev',
+    image: {
+      imageClasses: `bg-[url('/images/projects/dannycallaghan.png')]`,
+    },
+    tags: [
+      {
+        name: 'Front-end',
+        klasses: colors['front-end'],
+      },
+      {
+        name: 'UI/UX Design',
+        klasses: colors['ui/ux'],
+      },
+      {
+        name: 'Astro',
+        klasses: colors['astro'],
+      },
+      {
+        name: 'JavaScript',
+        klasses: colors['javascript'],
+      },
+      {
+        name: 'Tailwind',
+        klasses: colors['tailwind'],
+      },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
+      },
+    ]
+  },
+  {
+    title: 'DJ2000',
+    description: `The DJ2000 - a desktop DJ application written in C++, as a university project.`,
+    link: 'https://www.youtube.com/watch?v=c-NdoncqnZ0',
+    image: {
+      imageClasses: `bg-[url('/images/projects/dj2000.png')]`,
+    },
+    tags: [
+      {
+        name: 'Developer',
+        klasses: colors['developer'],
+      },
+      {
+        name: 'UI/UX Design',
+        klasses: colors['ui/ux'],
+      },
+      {
+        name: 'C++',
+        klasses: colors['c++'],
+      },
+      {
+        name: 'JUCE',
+        klasses: colors['juce'],
+      },
+    ]
+  },
+  {
+    title: 'ToViewList',
+    description: `A to-do list for your TV, written in React Native, for a university project.`,
+    link: 'https://www.youtube.com/watch?v=XjadFAIw0Lc',
+    image: {
+      imageClasses: `bg-[url('/images/projects/toviewlist.png')] !bg-inherit`,
+    },
+    tags: [
+      {
+        name: 'Full Stack',
+        klasses: colors['full-stack'],
+      },
+      {
+        name: 'UI/UX Design',
+        klasses: colors['ui/ux'],
+      },
+      {
+        name: 'React Native',
+        klasses: colors['react-native'],
+      },
+      {
+        name: 'Firebase',
+        klasses: colors['firebase'],
+      },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
+      },
+    ]
+  },
+  {
+    title: 'Deep Learning',
+    description: `Training ML models to identify images, with Python and TensorFlow`,
+    link: '/assets/deeplearning/index.html',
+    image: {
+      imageClasses: `bg-[url('/images/projects/deeplearning.png')] !bg-inherit`,
+    },
+    tags: [
+      {
+        name: 'Python',
+        klasses: colors['python'],
+      },
+      {
+        name: 'Author',
+        klasses: colors['author'],
+      },
+      {
+        name: 'TensorFlow',
+        klasses: colors['tensorflow'],
+      },
+    ]
+  },
+  {
+    title: 'KNN Algorithm',
+    description: `Implementing the k-nearest neightbour algorithm with Python.`,
+    link: '/assets/knn/index.html',
+    image: {
+      imageClasses: `bg-[url('/images/projects/knn.png')] !bg-inherit`,
+    },
+    tags: [
+      {
+        name: 'Python',
+        klasses: colors['python'],
+      },
+      {
+        name: 'Author',
+        klasses: colors['author'],
+      },
+    ]
+  },
+  {
+    title: 'A "League of Nations on the Pitch"',
+    description: `An analysis of overseas players in the English Premier League and their effect, using Python.`,
+    link: '/assets/premierleague/index.html',
+    image: {
+      imageClasses: `bg-[url('/images/projects/premierleague.png')] !bg-100-100`,
+    },
+    tags: [
+      {
+        name: 'Python',
+        klasses: colors['python'],
+      },
+      {
+        name: 'Author',
+        klasses: colors['author'],
+      },
+    ]
+  },
+];
+
+const shuffle = (array: IProject[] | ITag[]): IProject[] | ITag[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const shuffledProjects = shuffle(projects);
+---
+
+<section
+  id="projects"
+  class="flex pt-24 flex-col text-xl items-center"
+>
+  <div class="flex flex-col items-center">
+    <h2
+      class="gradient-text text-center text-2xl mb-4"
+    >
+      Work / Projects
+    </h2>
+  </div>
+  <p class="w-10/12 mb-4 text-gray-500 text-center text-base !leading-5 max-w-4xl">
+    Whilst not an exhaustive list (and it changes often) below are some examples of previous work that I might consider important, or perhaps that I simply enjoyed doing. Ideally both.
+  </p>
+  <p class="w-10/12 text-gray-500 text-center text-base !leading-5 max-w-3xl">
+    Each project details my role, and the stack that I used (if I didn't touch the back-end, for example, the back-end tech is not listed). Most code respositories are available on request.
+  </p>
+  <div class="w-10/12 pt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {shuffledProjects.map((project, i) => (
+    <div data-link={(project as IProject).link} data-key={i} class="bg-[#1b2948] border-x border-b rounded-b-lg border-gray-900 group-hover:border-gray-800 flex flex-col project-card group max-w-sm overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer">
+      <div class={`${(project as IProject)?.image.imageClasses} w-full rounded-t-lg p-5 h-48 bg-cover bg-center`}></div>
+      <div class="px-6 py-4 text-gray-300 text-base !leading-6">
+        <div class="pb-4">
+          <h3 class="font-bold !leading-6 my-4 text-lg text-secondary group-hover:text-primary">{(project as IProject).title}</h3>
+          <p>
+            {(project as IProject).description}
+          </p>
+        </div>
+        <div class="pb-4">
+          {shuffle((project as IProject).tags).map(tag => (
+            <span class={`${(tag as ITag).klasses} inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2`}>{(tag as ITag).name}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  import invariant from "tiny-invariant";
+
+  const projectLinks = document.querySelectorAll(".project-card");
+
+  invariant(projectLinks, "projectLinks should not be empty");
+
+  Array.from(projectLinks).map(project => {
+    project.addEventListener('click', (event) => {
+      const target = event.target as HTMLDivElement;
+      const card = target.closest('.project-card') as HTMLDivElement;
+      invariant(card, "card should not be null");
+      const link = card.dataset.link;
+      window.open(link);
+    })
+  })
+</script>
