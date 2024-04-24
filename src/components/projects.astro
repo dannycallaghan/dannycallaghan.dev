@@ -576,8 +576,11 @@ const shuffledProjects = shuffle(projects);
     Whilst not an exhaustive list (and it changes often) below are some examples of previous work that I might consider important, or perhaps that I simply enjoyed doing. Ideally both.
   </p>
   <p class="w-10/12 text-gray-500 text-center text-base !leading-5 max-w-3xl">
-    Each project details my role, and the stack that I used (if I didn't touch the back-end, for example, the back-end tech is not listed). Most code respositories are available below, or on request.
+    Each project details my role, and the stack that I used (if I didn't touch the back-end, for example, the back-end tech is not listed). Most code repositories are available below, or on request.
   </p>
+  <!-- <div>
+    <span class={`text-white bg-[#2c9eca] inline-block rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2`}>React</span>
+  </div> -->
   <div class="w-10/12 pt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {shuffledProjects.map((project, i) => (
     <div data-link={(project as IProject).link} data-key={i} class="bg-[#1b2948] border-x border-b rounded-b-lg border-gray-900 group-hover:border-gray-800 flex flex-col project-card group max-w-sm overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer">
