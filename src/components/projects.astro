@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface IProject {
   title: string;
   description: string;
@@ -7,6 +9,7 @@ interface IProject {
     imageClasses: string;
   };
   tags: ITag[];
+  github?: string;
 };
 
 interface ITag {
@@ -80,12 +83,17 @@ const projects = [
         name: 'RWD',
         klasses: colors['rwd'],
       },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
+      },
     ]
   },
   {
     title: 'Danny Callaghan',
     description: `NFT trading platform for users alergic to mushrooms. Only kidding, it's this site.`,
     link: 'https://dannycallaghan.dev',
+    github: 'https://github.com/dannycallaghan/dannycallaghan.dev',
     image: {
       imageClasses: `bg-[url('/images/projects/dannycallaghan.png')]`,
     },
@@ -237,6 +245,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/datavis.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/datavis',
     tags: [
       {
         name: 'Front-end',
@@ -259,6 +268,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/piano.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-webcam-piano',
     tags: [
       {
         name: 'Front-end',
@@ -277,6 +287,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/face.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-average-face',
     tags: [
       {
         name: 'Front-end',
@@ -295,6 +306,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/instagram.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-instagram-filter',
     tags: [
       {
         name: 'Front-end',
@@ -313,6 +325,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/organic.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-noisy-grid',
     tags: [
       {
         name: 'Front-end',
@@ -331,6 +344,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/3d.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-3d-sin-games',
     tags: [
       {
         name: 'Front-end',
@@ -349,6 +363,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/allotr.png')]`,
     },
+    github: 'https://github.com/dannycallaghan/allotr',
     tags: [
       {
         name: 'Full Stack',
@@ -399,6 +414,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/explorerbob.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/explorerbob',
     tags: [
       {
         name: 'Front-end',
@@ -417,6 +433,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/asteroids.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/gp-asteroids',
     tags: [
       {
         name: 'Front-end',
@@ -435,6 +452,7 @@ const projects = [
     image: {
       imageClasses: `bg-[url('/images/projects/barcode.png')] !bg-100-100`,
     },
+    github: 'https://github.com/dannycallaghan/barcode',
     tags: [
       {
         name: 'Front-end',
@@ -455,6 +473,10 @@ const projects = [
       {
         name: 'REST',
         klasses: colors['rest'],
+      },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
       },
     ]
   },
@@ -486,6 +508,10 @@ const projects = [
         name: 'React',
         klasses: colors['react'],
       },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
+      },
     ]
   },
   {
@@ -515,6 +541,10 @@ const projects = [
       {
         name: 'React',
         klasses: colors['react'],
+      },
+      {
+        name: 'SPA',
+        klasses: colors['spa'],
       },
     ]
   },
@@ -546,18 +576,21 @@ const shuffledProjects = shuffle(projects);
     Whilst not an exhaustive list (and it changes often) below are some examples of previous work that I might consider important, or perhaps that I simply enjoyed doing. Ideally both.
   </p>
   <p class="w-10/12 text-gray-500 text-center text-base !leading-5 max-w-3xl">
-    Each project details my role, and the stack that I used (if I didn't touch the back-end, for example, the back-end tech is not listed). Most code respositories are available on request.
+    Each project details my role, and the stack that I used (if I didn't touch the back-end, for example, the back-end tech is not listed). Most code respositories are available below, or on request.
   </p>
   <div class="w-10/12 pt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {shuffledProjects.map((project, i) => (
     <div data-link={(project as IProject).link} data-key={i} class="bg-[#1b2948] border-x border-b rounded-b-lg border-gray-900 group-hover:border-gray-800 flex flex-col project-card group max-w-sm overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer">
       <div class={`${(project as IProject)?.image.imageClasses} w-full rounded-t-lg p-5 h-48 bg-cover bg-center`}></div>
-      <div class="px-6 py-4 text-gray-300 text-base !leading-6">
+      <div class="px-6 py-4 text-gray-300 text-base !leading-6 relative">
         <div class="pb-4">
-          <h3 class="font-bold !leading-6 my-4 text-lg text-secondary group-hover:text-primary">{(project as IProject).title}</h3>
+          <h3 class="font-bold !leading-6 my-4 text-lg text-secondary group-hover:text-primary w-10/12">{(project as IProject).title}</h3>
           <p>
             {(project as IProject).description}
           </p>
+          {(project as IProject).github && (
+            <Icon data-link={(project as IProject).github} name="mdi:github" class="absolute top-2 right-2" size={40} />
+          )}
         </div>
         <div class="pb-4">
           {shuffle((project as IProject).tags).map(tag => (
@@ -574,6 +607,7 @@ const shuffledProjects = shuffle(projects);
   import invariant from "tiny-invariant";
 
   const projectLinks = document.querySelectorAll(".project-card");
+  const githubLinks = document.querySelectorAll(".project-card svg");
 
   invariant(projectLinks, "projectLinks should not be empty");
 
@@ -583,6 +617,16 @@ const shuffledProjects = shuffle(projects);
       const card = target.closest('.project-card') as HTMLDivElement;
       invariant(card, "card should not be null");
       const link = card.dataset.link;
+      window.open(link);
+    })
+  });
+
+  Array.from(githubLinks).map(project => {
+    project.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const icon = event.currentTarget;
+      if (!(icon instanceof SVGElement)) return;
+      const link = icon.dataset.link;
       window.open(link);
     })
   })
