@@ -517,7 +517,7 @@ const shuffledProjects = shuffle(projects);
       const card = target.closest('.project-card') as HTMLDivElement;
       invariant(card, "card should not be null");
       const link = card.dataset.link;
-      if (link.length) {
+      if (link && link.length) {
         window.open(link);
       }
     })
