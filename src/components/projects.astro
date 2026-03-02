@@ -359,7 +359,7 @@ const projects = [
   {
     title: 'allotr',
     description: 'allotr is free task list application that allows infinite collaborators.',
-    link: 'https://allotr.app',
+    link: '',
     image: {
       imageClasses: `bg-[url('/images/projects/allotr.png')]`,
     },
@@ -445,109 +445,6 @@ const projects = [
       },
     ]
   },
-  {
-    title: 'BarCode',
-    description: `A mixologist website, using a public API to show cocktail recipes.`,
-    link: 'https://barcode-kappa.vercel.app/',
-    image: {
-      imageClasses: `bg-[url('/images/projects/barcode.png')] !bg-100-100`,
-    },
-    github: 'https://github.com/dannycallaghan/barcode',
-    tags: [
-      {
-        name: 'Front-end',
-        klasses: colors['front-end'],
-      },
-      {
-        name: 'JavaScript',
-        klasses: colors['javascript'],
-      },
-      {
-        name: 'UI/UX',
-        klasses: colors['ui/ux'],
-      },
-      {
-        name: 'RWD',
-        klasses: colors['rwd'],
-      },
-      {
-        name: 'REST',
-        klasses: colors['rest'],
-      },
-      {
-        name: 'SPA',
-        klasses: colors['spa'],
-      },
-    ]
-  },
-  {
-    title: `Women's Night Safety Charter`,
-    description: 'Website built for the Mayor of London office as part of their commitment to tackle violence against women.',
-    link: 'https://wnsc.tillr.io',
-    image: {
-      imageClasses: `bg-[url('/images/projects/wnsc.png')] !bg-100-100`,
-    },
-    tags: [
-      {
-        name: 'Front-end',
-        klasses: colors['front-end'],
-      },
-      {
-        name: 'TypeScript',
-        klasses: colors['typescript'],
-      },
-      {
-        name: 'UI/UX',
-        klasses: colors['ui/ux'],
-      },
-      {
-        name: 'RWD',
-        klasses: colors['rwd'],
-      },
-      {
-        name: 'React',
-        klasses: colors['react'],
-      },
-      {
-        name: 'SPA',
-        klasses: colors['spa'],
-      },
-    ]
-  },
-  {
-    title: `Safer Places For Women and Girls Charter Toolkit`,
-    description: `Part of Stoke-on-Trent and Staffordshire's Violence Reduction Alliance, specifically targetting violence against women and girls.`,
-    link: 'https://spwg.tillr.io',
-    image: {
-      imageClasses: `bg-[url('/images/projects/spwg.png')] !bg-100-100`,
-    },
-    tags: [
-      {
-        name: 'Front-end',
-        klasses: colors['front-end'],
-      },
-      {
-        name: 'TypeScript',
-        klasses: colors['typescript'],
-      },
-      {
-        name: 'UI/UX',
-        klasses: colors['ui/ux'],
-      },
-      {
-        name: 'RWD',
-        klasses: colors['rwd'],
-      },
-      {
-        name: 'React',
-        klasses: colors['react'],
-      },
-      {
-        name: 'SPA',
-        klasses: colors['spa'],
-      },
-    ]
-  },
 ];
 
 const shuffle = (array: IProject[] | ITag[]): IProject[] | ITag[] => {
@@ -620,7 +517,9 @@ const shuffledProjects = shuffle(projects);
       const card = target.closest('.project-card') as HTMLDivElement;
       invariant(card, "card should not be null");
       const link = card.dataset.link;
-      window.open(link);
+      if (link.length) {
+        window.open(link);
+      }
     })
   });
 
